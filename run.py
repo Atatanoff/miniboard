@@ -1,4 +1,6 @@
 import tkinter
+import tkinter.constants
+
 import customtkinter
 
 
@@ -37,150 +39,171 @@ class App(customtkinter.CTk):
 
     # в этой ф-ции кнопки клавиатуры
     def button_group(self):
-        self.button1 = customtkinter.CTkButton(command=lambda: self.button_function("$key1", self.button1), text="Имя", master=self,
+        self.button1 = customtkinter.CTkButton(command=lambda: self.button_function("$key1", self.button1), text="Имя",
+                                               master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70,
+                                               height=70, font=('TButton', 10),
                                                bg_color="#323335")
         self.button1.place(relx=0.570, rely=0.177)
 
-        self.button2 = customtkinter.CTkButton(command=lambda: self.button_function("$key2",self.button2), text="Имя", master=self,
+        self.button2 = customtkinter.CTkButton(command=lambda: self.button_function("$key2", self.button2), text="Имя",
+                                               master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70,
+                                               height=70, font=('TButton', 10),
                                                bg_color="#323335")
         self.button2.place(relx=0.706, rely=0.177)
 
-        self.button3 = customtkinter.CTkButton(command=lambda: self.button_function("$key3",self.button3), text="Имя", master=self,
+        self.button3 = customtkinter.CTkButton(command=lambda: self.button_function("$key3", self.button3), text="Имя",
+                                               master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70,
+                                               height=70, font=('TButton', 10),
                                                bg_color="#323335")
         self.button3.place(relx=0.840, rely=0.177)
         # второй ряд
-        self.button4 = customtkinter.CTkButton(command=lambda: self.button_function("$key4",self.button4), text="Имя", master=self,
+        self.button4 = customtkinter.CTkButton(command=lambda: self.button_function("$key4", self.button4), text="Имя",
+                                               master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70,
+                                               height=70, font=('TButton', 10),
                                                bg_color="#323335")
         self.button4.place(relx=0.032, rely=0.299)
 
-        self.button5 = customtkinter.CTkButton(command=lambda: self.button_function("$key5",self.button5), text="Имя", master=self,
+        self.button5 = customtkinter.CTkButton(command=lambda: self.button_function("$key5", self.button5), text="Имя",
+                                               master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70,
+                                               height=70, font=('TButton', 10),
                                                bg_color="#323335")
         self.button5.place(relx=0.168, rely=0.299)
 
-        self.button6 = customtkinter.CTkButton(command=lambda: self.button_function("$key6",self.button6), text="Имя", master=self,
+        self.button6 = customtkinter.CTkButton(command=lambda: self.button_function("$key6", self.button6), text="Имя",
+                                               master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70,
+                                               height=70, font=('TButton', 10),
                                                bg_color="#323335")
         self.button6.place(relx=0.301, rely=0.299)
 
-        self.button7 = customtkinter.CTkButton(command=lambda: self.button_function("$key7",self.button7), text="Имя", master=self,
+        self.button7 = customtkinter.CTkButton(command=lambda: self.button_function("$key7", self.button7), text="Имя",
+                                               master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70,
+                                               height=70, font=('TButton', 10),
                                                bg_color="#323335")
         self.button7.place(relx=0.436, rely=0.299)
 
-        self.button8 = customtkinter.CTkButton(command=lambda: self.button_function("$key8",self.button8), text="Имя", master=self,
+        self.button8 = customtkinter.CTkButton(command=lambda: self.button_function("$key8", self.button8), text="Имя",
+                                               master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70,
+                                               height=70, font=('TButton', 10),
                                                bg_color="#323335")
         self.button8.place(relx=0.570, rely=0.299)
 
-        self.button9 = customtkinter.CTkButton(command=lambda: self.button_function("$key9", self.button9), text="Имя", master=self,
+        self.button9 = customtkinter.CTkButton(command=lambda: self.button_function("$key9", self.button9), text="Имя",
+                                               master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70,
+                                               height=70, font=('TButton', 10),
                                                bg_color="#323335")
         self.button9.place(relx=0.706, rely=0.299)
 
-        self.button10 = customtkinter.CTkButton(command=lambda: self.button_function("$key10",self.button10), text="Имя", master=self,
+        self.button10 = customtkinter.CTkButton(command=lambda: self.button_function("$key10", self.button10),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button10.place(relx=0.840, rely=0.299)
         # третий ряд
-        self.button11 = customtkinter.CTkButton(command=lambda: self.button_function("$key11",self.button11), text="Имя", master=self,
+        self.button11 = customtkinter.CTkButton(command=lambda: self.button_function("$key11", self.button11),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=144,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button11.place(relx=0.032, rely=0.420)
 
-        self.button12 = customtkinter.CTkButton(command=lambda: self.button_function("$key12",self.button12), text="Имя", master=self,
+        self.button12 = customtkinter.CTkButton(command=lambda: self.button_function("$key12", self.button12),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button12.place(relx=0.301, rely=0.420)
 
-        self.button13 = customtkinter.CTkButton(command=lambda: self.button_function("$key13",self.button13), text="Имя", master=self,
+        self.button13 = customtkinter.CTkButton(command=lambda: self.button_function("$key13", self.button13),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button13.place(relx=0.436, rely=0.420)
 
-        self.button14 = customtkinter.CTkButton(command=lambda: self.button_function("$key14",self.button14), text="Имя", master=self,
+        self.button14 = customtkinter.CTkButton(command=lambda: self.button_function("$key14", self.button14),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button14.place(relx=0.570, rely=0.420)
 
-        self.button15 = customtkinter.CTkButton(command=lambda: self.button_function("$key15",self.button15), text="Имя", master=self,
+        self.button15 = customtkinter.CTkButton(command=lambda: self.button_function("$key15", self.button15),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button15.place(relx=0.706, rely=0.420)
 
-        self.button16 = customtkinter.CTkButton(command=lambda: self.button_function("$key16",self.button16), text="Имя", master=self,
+        self.button16 = customtkinter.CTkButton(command=lambda: self.button_function("$key16", self.button16),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=144,
+                                                height=144, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button16.place(relx=0.840, rely=0.420)
 
-        self.button17 = customtkinter.CTkButton(command=lambda: self.button_function("$key17",self.button17), text="Имя", master=self,
+        self.button17 = customtkinter.CTkButton(command=lambda: self.button_function("$key17", self.button17),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button17.place(relx=0.032, rely=0.541)
 
-        self.button18 = customtkinter.CTkButton(command=lambda: self.button_function("$key18",self.button18), text="Имя", master=self,
+        self.button18 = customtkinter.CTkButton(command=lambda: self.button_function("$key18", self.button18),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button18.place(relx=0.168, rely=0.541)
 
-        self.button19 = customtkinter.CTkButton(command=lambda: self.button_function("$key19",self.button19), text="Имя", master=self,
+        self.button19 = customtkinter.CTkButton(command=lambda: self.button_function("$key19", self.button19),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button19.place(relx=0.301, rely=0.541)
 
-        self.button20 = customtkinter.CTkButton(command=lambda: self.button_function("$key20",self.button20), text="Имя", master=self,
+        self.button20 = customtkinter.CTkButton(command=lambda: self.button_function("$key20", self.button20),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=144,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button20.place(relx=0.436, rely=0.541)
 
-        self.button21 = customtkinter.CTkButton(command=lambda: self.button_function("$key21",self.button21), text="Имя", master=self,
+        self.button21 = customtkinter.CTkButton(command=lambda: self.button_function("$key21", self.button21),
+                                                text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70,
+                                                height=70, font=('TButton', 10),
                                                 bg_color="#323335")
         self.button21.place(relx=0.706, rely=0.541)
 
@@ -236,24 +259,27 @@ class App(customtkinter.CTk):
         self.press_bt = bt
         bt.configure(fg_color='#8AB42F')
 
-
     def save(self):
         name = f"+{self.entry.get()}" if self.entry.get() else ''
         data_to_send = self.code + self.Ctrl.get() + self.Alt.get() + self.Shift.get() + self.Tab.get() + name + ';'
         print(data_to_send)
+        name_bt = data_to_send.split('+')
+        name_bt.pop(0)
+        # if self.code == '$key11' or self.code =='$key20':
+        #     text_bt = self.Ctrl.get() + self.Alt.get() + self.Shift.get() + self.Tab.get() + name + ';'
+        #     self.press_bt.configure(text=text_bt[1:])
+        # else:
+        text_bt = ''
+        for i in range(len(name_bt) - 1):
+            text_bt += name_bt[i] + '+' + '\n'
+        if name_bt: text_bt += name_bt[-1]
+        if text_bt: self.press_bt.configure(text=text_bt)
 
-    # def click_btn(self, arg, bt, bt_sd):
-    #     bt_sd["state"] = ["active"]
-    #     press_bt[0]["bg"] = color_bt
-    #     bt["bg"] = color_press
-    #     press_bt[0] = bt
-
-    # def click_btn_send(self, bt, tx_b: tk.Entry, ):
-    #     for el in (kp1, kp2, kp3, kp4):
-    #         el.set('')
-    #     tx_b.delete(0, tk.END)
-    #     bt["state"] = ["disabled"]
-    #     press_bt[0]['bg'] = color_bt
+        for el in (self.Alt, self.Tab, self.Shift, self.Ctrl):
+            el.set("")
+        self.entry.delete(0, tkinter.constants.END)
+        self.button.configure(state='disabled')
+        self.press_bt.configure(fg_color='#FFFFFF')
 
 
 if __name__ == "__main__":
