@@ -1,6 +1,8 @@
 import os
 import tkinter
 import tkinter.constants
+from tkinter.messagebox import showinfo
+import webbrowser
 
 import customtkinter
 
@@ -14,6 +16,7 @@ class App(customtkinter.CTk):
         self.geometry("550x600")
         self.resizable(False, False)
         self.configure(fg_color='#323335')
+
 
         # переменная хранящая имя выбранной кнопки клавиатуры
         self.code: str = ""
@@ -35,9 +38,9 @@ class App(customtkinter.CTk):
         self.values_chexbox = self.Ctrl, self.Alt, self.Shift, self.Tab, self.Bac, self.Entr, \
             self.Del, self.Esc, self.F3, self.F4, self.Space, self.Comm,
 
-        # self.iconbitmap(default="aspid.ico")
-        # img = PhotoImage(file='Frame 1.png')
-        # Label(app,image=img,bg='#000000').pack()
+        #self.iconbitmap("@aspid.ico")
+        # img = tkinter.PhotoImage(file='Frame 1.png')
+        # Label(self,image=img,bg='#000000').pack()
 
         # переменные конфигурационного файла
         self.dir_file = 'data/'
@@ -48,11 +51,20 @@ class App(customtkinter.CTk):
         self.button_group()
         self.entry_group()
         self.checkbox_group()
+        self.footer()
 
-        self.label_1 = customtkinter.CTkLabel(text="Введите макрос набор", text_color="#8AB42F", master=self,
-                                              justify=tkinter.LEFT,
-                                              bg_color="#323335")
-        self.label_1.place(relx=0.550, rely=0.690)
+        # переменная с информацией о создателях программе и т.д
+        self.about = '''
+        Здесь пишем информацию о продукте:
+        Приложения для бла-бла-юзания
+        Разработанно при участии:
+            Umbrella
+            Big Kahuna Burger
+        Авторское право:
+            Лев Натанович Щаранский
+            поэт Цветик
+        Ну и в общем так далее)...
+        '''
 
         # загрузка данных из конфигурационного файла
         self.load_file()
@@ -389,11 +401,37 @@ class App(customtkinter.CTk):
 
         # ____________________________________________________________________________________________________________
 
+        self.label_1 = customtkinter.CTkLabel(text="Введите макрос набор", text_color="#8AB42F", master=self,
+                                              justify=tkinter.LEFT,
+                                              bg_color="#323335")
+        self.label_1.place(relx=0.550, rely=0.690)
         self.button = customtkinter.CTkButton(command=self.save, text="Сохранить", master=self, text_color="#FFFFFF",
                                               fg_color='#323335',
                                               hover_color="#8AB42F", corner_radius=8, width=120, height=40,
                                               bg_color="#323335", state="disabled")
         self.button.place(relx=0.655, rely=0.811)
+
+    # информацияонный подвал
+    def footer(self):
+        border_1 = customtkinter.CTkLabel(self, text="©Aspis Keyboard 2022", text_color="#cce74f", justify=tkinter.LEFT)
+        border_1.place(relx=0.01, rely=0.95)
+
+        labelr1 = tkinter.Label(self, text="behance", fg="#0058fb", cursor="hand2", bg='#313335')
+        labelr1.bind("<Button-1>", lambda event: self.open_link(r"https://www.behance.net/shakirovnz"))
+        labelr1.place(relx=0.36, rely=0.95)
+
+        labelr2 = tkinter.Label(self, text="telegram", fg="#2aa2de", cursor="hand2", bg='#313335')
+        labelr2.bind("<Button-1>", lambda event: self.open_link(r"https://t.me/shakirovnz"))
+        labelr2.place(relx=0.45, rely=0.95)
+
+        labelr3 = tkinter.Label(self, text="about", fg="#2aa2de", cursor="hand2", bg='#313335')
+        labelr3.bind("<Button-1>", lambda event: showinfo(title="Информация", message=self.about))
+        labelr3.place(relx=0.54, rely=0.95)
+
+    # ф-ция открытия ссылок из подвала
+    @staticmethod
+    def open_link(url):
+        webbrowser.open_new(url)
 
     # функция сохранения значния выбраной кнопки клавиатуры
     def button_function(self, arg: str, bt):
@@ -422,10 +460,10 @@ class App(customtkinter.CTk):
         self.save_file()
 
     # ф-ция форматирования текста кнопки
-    @staticmethod
-    def get_text_button(data_to_send):
+    def get_text_button(self, data_to_send):
         name_bt = data_to_send.split('+')
-        name_bt.pop(0)
+        key = name_bt.pop(0)
+        if key in ("$key25", "$key26"): return data_to_send[6:-1]
         text_bt = ''
         for i in range(len(name_bt) - 1):
             text_bt += name_bt[i] + '+' + '\n'
