@@ -14,8 +14,8 @@ def ser_write(data):
         if port.pid: f_port = port
         print('Find port ' + port.device)
 
-    if f_port:
-        print("Port not found")
+    if not f_port:
+        print("Device not found")
         print("Проверьте правильность подключения устройства в порт и попробуйте еще раз")
         return
 

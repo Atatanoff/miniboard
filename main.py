@@ -6,8 +6,8 @@ import webbrowser
 
 import customtkinter
 
-# этот импорт, чтоб подключалось к порту, переделать в "from connect_port import ser_write"
-from connect_port import ser_write_example as ser_write
+# этот импорт, чтоб подключалось к порту, должен быть "from connect_port import ser_write"
+from connect_port import ser_write
 
 
 class App(customtkinter.CTk):
