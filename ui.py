@@ -1,44 +1,18 @@
 import tkinter
-import tkinter.constants
+from tkinter.messagebox import showinfo
 
 import customtkinter
 
 
-class App(customtkinter.CTk):
+class MainWindow(customtkinter.CTk):
     def __init__(self):
         super().__init__()
 
         # configure window
         self.title("ASPIS")
-        self.geometry("552x616")
+        self.geometry("550x600")
         self.resizable(False, False)
         self.configure(fg_color='#323335')
-
-        # переменная хранящая имя выбранной кнопки клавиатуры
-        self.code: str = ""
-        # переменная хранящая выбранную кнопку
-        self.press_bt: customtkinter.CTkButton = None
-        # переменные хранящие выбранные чекбоксы
-        self.Ctrl = tkinter.StringVar()
-        self.Alt = tkinter.StringVar()
-        self.Shift = tkinter.StringVar()
-        self.Tab = tkinter.StringVar()
-
-        # self.iconbitmap(default="aspid.ico")
-        # img = PhotoImage(file='Frame 1.png')
-        # Label(app,image=img,bg='#000000').pack()
-
-        self.button_group()
-        self.entry_group()
-        self.checkbox_group()
-
-        self.label_1 = customtkinter.CTkLabel(text="Введите макрос набор", text_color="#8AB42F", master=self,
-                                              justify=tkinter.LEFT,
-                                              bg_color="#323335")
-        self.label_1.place(relx=0.550, rely=0.690)
-
-    # в этой ф-ции кнопки клавиатуры
-    def button_group(self):
         self.button1 = customtkinter.CTkButton(command=lambda: self.button_function("$key1", self.button1), text="Имя",
                                                master=self,
                                                text_color="#008bd0",
@@ -207,15 +181,54 @@ class App(customtkinter.CTk):
                                                 bg_color="#323335")
         self.button21.place(relx=0.706, rely=0.541)
 
-    # в этой ф-ции поле ввода
-    def entry_group(self):
+        # ЭНКОДЕРЫ
+        # Вертикальный
+        self.button24 = customtkinter.CTkButton(command=lambda: self.button_function("$key24", self.button24),
+                                                text="Имя", master=self,
+                                                text_color="#008bd0",
+                                                fg_color='#ECECEC', hover_color="#A3B8BD", corner_radius=8, width=55,
+                                                height=44, font=('TButton', 10),
+                                                bg_color="#323335")
+        self.button24.place(relx=0.035, rely=0.190)
+
+        self.button23 = customtkinter.CTkButton(command=lambda: self.button_function("$key23", self.button23),
+                                                text="Имя", master=self,
+                                                text_color="#008bd0",
+                                                fg_color='#ECECEC', hover_color="#A3B8BD", corner_radius=8, width=55,
+                                                height=44, font=('TButton', 10),
+                                                bg_color="#323335")
+        self.button23.place(relx=0.2, rely=0.190)
+
+        self.button22 = customtkinter.CTkButton(command=lambda: self.button_function("$key22", self.button22),
+                                                text="Имя", master=self,
+                                                text_color="#008bd0",
+                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=60,
+                                                height=60, font=('TButton', 10),
+                                                bg_color="#323335")
+        self.button22.place(relx=0.11, rely=0.177)
+        # Горизонтальный
+
+        self.button25 = customtkinter.CTkButton(command=lambda: self.button_function("$key25", self.button25),
+                                                text="Имя", master=self,
+                                                text_color="#008bd0",
+                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=3, width=140,
+                                                height=25, font=('TButton', 10),
+                                                bg_color="#323335")
+        self.button25.place(relx=0.306, rely=0.189)
+
+        self.button26 = customtkinter.CTkButton(command=lambda: self.button_function("$key26", self.button26),
+                                                text="Имя", master=self,
+                                                text_color="#008bd0",
+                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=3, width=140,
+                                                height=25, font=('TButton', 10),
+                                                bg_color="#323335")
+        self.button26.place(relx=0.306, rely=0.229)
+
         self.entry = customtkinter.CTkEntry(placeholder_text="Желательно Eng", master=self, corner_radius=6, width=230,
                                             height=30,
                                             fg_color="#323335", bg_color="#323335", text_color='#FFFFFF')
         self.entry.place(relx=0.549, rely=0.743)
 
-    # в этой ф-ции чекбоксы и кнопка сохранить
-    def checkbox_group(self):
         self.checkbox1 = customtkinter.CTkCheckBox(variable=self.Ctrl, offvalue='', onvalue="+Ctrl", master=self,
                                                    text_color="#cce74f", text="Ctrl",
                                                    fg_color="#cce74f", hover_color="#cce74f", checkmark_color="#313335",
@@ -244,44 +257,93 @@ class App(customtkinter.CTk):
                                                    border_width=1, corner_radius=3)
         self.checkbox4.place(relx=0.032, rely=0.835)
 
+        self.checkbox5 = customtkinter.CTkCheckBox(variable=self.Esc, offvalue='', onvalue="+Esc", master=self,
+                                                   text_color="#cce74f", text="Esc",
+                                                   fg_color="#cce74f", hover_color="#cce74f", checkmark_color="#313335",
+                                                   bg_color="#323335", width=70, checkbox_width=13, checkbox_height=13,
+                                                   border_width=1, corner_radius=3)
+        self.checkbox5.place(relx=0.165, rely=0.700)
+
+        self.checkbox6 = customtkinter.CTkCheckBox(variable=self.Bac, offvalue='', onvalue="+Bac", master=self,
+                                                   text_color="#cce74f", text="Bac",
+                                                   fg_color="#cce74f", hover_color="#cce74f", checkmark_color="#313335",
+                                                   bg_color="#323335", width=70, checkbox_width=13, checkbox_height=13,
+                                                   border_width=1, corner_radius=3)
+        self.checkbox6.place(relx=0.165, rely=0.745)
+
+        self.checkbox7 = customtkinter.CTkCheckBox(variable=self.Entr, offvalue='', onvalue="+Entr", master=self,
+                                                   text_color="#cce74f", text="Entr",
+                                                   fg_color="#cce74f", hover_color="#cce74f", checkmark_color="#313335",
+                                                   bg_color="#323335", width=70, checkbox_width=13, checkbox_height=13,
+                                                   border_width=1, corner_radius=3)
+        self.checkbox7.place(relx=0.165, rely=0.79)
+
+        self.checkbox8 = customtkinter.CTkCheckBox(variable=self.Del, offvalue='', onvalue="+Del", master=self,
+                                                   text_color="#cce74f", text="Del",
+                                                   fg_color="#cce74f", hover_color="#cce74f", checkmark_color="#313335",
+                                                   bg_color="#323335", width=70, checkbox_width=13, checkbox_height=13,
+                                                   border_width=1, corner_radius=3)
+        self.checkbox8.place(relx=0.165, rely=0.835)
+
+        self.checkbox9 = customtkinter.CTkCheckBox(variable=self.F3, offvalue='', onvalue="+F3", master=self,
+                                                   text_color="#cce74f", text="F3",
+                                                   fg_color="#cce74f", hover_color="#cce74f", checkmark_color="#313335",
+                                                   bg_color="#323335", width=70, checkbox_width=13, checkbox_height=13,
+                                                   border_width=1, corner_radius=3)
+        self.checkbox9.place(relx=0.302, rely=0.700)
+
+        self.checkbox10 = customtkinter.CTkCheckBox(variable=self.F4, offvalue='', onvalue="+F4", master=self,
+                                                    text_color="#cce74f", text="F4",
+                                                    fg_color="#cce74f", hover_color="#cce74f",
+                                                    checkmark_color="#313335",
+                                                    bg_color="#323335", width=70, checkbox_width=13, checkbox_height=13,
+                                                    border_width=1, corner_radius=3)
+        self.checkbox10.place(relx=0.302, rely=0.745)
+
+        self.checkbox11 = customtkinter.CTkCheckBox(variable=self.Space, offvalue='', onvalue="+Space", master=self,
+                                                    text_color="#cce74f", text="Space",
+                                                    fg_color="#cce74f", hover_color="#cce74f",
+                                                    checkmark_color="#313335",
+                                                    bg_color="#323335", width=70, checkbox_width=13, checkbox_height=13,
+                                                    border_width=1, corner_radius=3)
+        self.checkbox11.place(relx=0.302, rely=0.79)
+
+        self.checkbox12 = customtkinter.CTkCheckBox(variable=self.Comm, offvalue='', onvalue="+Comm", master=self,
+                                                    text_color="#cce74f", text="Comm",
+                                                    fg_color="#cce74f", hover_color="#cce74f",
+                                                    checkmark_color="#313335",
+                                                    bg_color="#323335", width=70, checkbox_width=13, checkbox_height=13,
+                                                    border_width=1, corner_radius=3)
+        self.checkbox12.place(relx=0.302, rely=0.835)
+
+        # ____________________________________________________________________________________________________________
+
+        self.label_1 = customtkinter.CTkLabel(text="Введите макрос набор", text_color="#8AB42F", master=self,
+                                              justify=tkinter.LEFT,
+                                              bg_color="#323335")
+        self.label_1.place(relx=0.550, rely=0.690)
         self.button = customtkinter.CTkButton(command=self.save, text="Сохранить", master=self, text_color="#FFFFFF",
                                               fg_color='#323335',
                                               hover_color="#8AB42F", corner_radius=8, width=120, height=40,
                                               bg_color="#323335", state="disabled")
         self.button.place(relx=0.655, rely=0.811)
 
-    # функция сохранения значния выбраной кнопки клавиатуры
-    def button_function(self, arg: str, bt):
-        self.code = arg
-        if self.press_bt: self.press_bt.configure(fg_color='#FFFFFF')
-        if self.button.cget('state') == 'disabled':
-            self.button.configure(state='active')
-        self.press_bt = bt
-        bt.configure(fg_color='#8AB42F')
+        border_1 = customtkinter.CTkLabel(self, text="©Aspis Keyboard 2022", text_color="#cce74f", justify=tkinter.LEFT)
+        border_1.place(relx=0.01, rely=0.95)
 
-    def save(self):
-        name = f"+{self.entry.get()}" if self.entry.get() else ''
-        data_to_send = self.code + self.Ctrl.get() + self.Alt.get() + self.Shift.get() + self.Tab.get() + name + ';'
-        print(data_to_send)
-        name_bt = data_to_send.split('+')
-        name_bt.pop(0)
-        # if self.code == '$key11' or self.code =='$key20':
-        #     text_bt = self.Ctrl.get() + self.Alt.get() + self.Shift.get() + self.Tab.get() + name + ';'
-        #     self.press_bt.configure(text=text_bt[1:])
-        # else:
-        text_bt = ''
-        for i in range(len(name_bt) - 1):
-            text_bt += name_bt[i] + '+' + '\n'
-        if name_bt: text_bt += name_bt[-1]
-        if text_bt: self.press_bt.configure(text=text_bt)
+        labelr1 = tkinter.Label(self, text="behance", fg="#0058fb", cursor="hand2", bg='#313335')
+        labelr1.bind("<Button-1>", lambda event: self.open_link(r"https://www.behance.net/shakirovnz"))
+        labelr1.place(relx=0.36, rely=0.95)
 
-        for el in (self.Alt, self.Tab, self.Shift, self.Ctrl):
-            el.set("")
-        self.entry.delete(0, tkinter.constants.END)
-        self.button.configure(state='disabled')
-        self.press_bt.configure(fg_color='#FFFFFF')
+        labelr2 = tkinter.Label(self, text="telegram", fg="#2aa2de", cursor="hand2", bg='#313335')
+        labelr2.bind("<Button-1>", lambda event: self.open_link(r"https://t.me/shakirovnz"))
+        labelr2.place(relx=0.45, rely=0.95)
+
+        labelr3 = tkinter.Label(self, text="about", fg="#2aa2de", cursor="hand2", bg='#313335')
+        labelr3.bind("<Button-1>", lambda event: showinfo(title="Информация", message=self.about))
+        labelr3.place(relx=0.54, rely=0.95)
 
 
 if __name__ == "__main__":
-    app = App()
+    app = MainWindow()
     app.mainloop()

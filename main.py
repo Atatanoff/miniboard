@@ -6,6 +6,9 @@ import webbrowser
 
 import customtkinter
 
+# этот импорт, чтоб подключалось к порту, переделать в "from connect_port import ser_write"
+from connect_port import ser_write_example as ser_write
+
 
 class App(customtkinter.CTk):
     def __init__(self):
@@ -16,7 +19,6 @@ class App(customtkinter.CTk):
         self.geometry("550x600")
         self.resizable(False, False)
         self.configure(fg_color='#323335')
-
 
         # переменная хранящая имя выбранной кнопки клавиатуры
         self.code: str = ""
@@ -38,7 +40,7 @@ class App(customtkinter.CTk):
         self.values_chexbox = self.Ctrl, self.Alt, self.Shift, self.Tab, self.Bac, self.Entr, \
             self.Del, self.Esc, self.F3, self.F4, self.Space, self.Comm,
 
-        #self.iconbitmap("@aspid.ico")
+        # self.iconbitmap("@aspid.ico")
         # img = tkinter.PhotoImage(file='Frame 1.png')
         # Label(self,image=img,bg='#000000').pack()
 
@@ -89,6 +91,7 @@ class App(customtkinter.CTk):
         with open(self.dir_file + self.name_file, 'w') as f:
             for key in self.d_name:
                 print(key, self.d_name[key], file=f)
+        ser_write(self.d_name[key])
 
     # в этой ф-ции кнопки клавиатуры
     def button_group(self):
