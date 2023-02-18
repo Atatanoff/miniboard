@@ -30,7 +30,9 @@ def ser_write(data):
     print('Connect ' + ser.name)
 
     ser.write(data.encode())
+    print("Закрываю порт...")
     ser.close()
+
 
 
 def ser_write_example(data):

@@ -3,6 +3,8 @@ import tkinter
 import tkinter.constants
 from tkinter.messagebox import showinfo
 import webbrowser
+from PIL import Image, ImageTk
+
 
 import customtkinter
 
@@ -16,7 +18,9 @@ class App(customtkinter.CTk):
 
         # configure window
         self.title("ASPIS")
-        self.geometry("550x600")
+        self.width = 550
+        self.height = 600
+        self.geometry(f"{self.width}x{self.height}")
         self.resizable(False, False)
         self.configure(fg_color='#323335')
 
@@ -40,11 +44,17 @@ class App(customtkinter.CTk):
         self.values_chexbox = self.Ctrl, self.Alt, self.Shift, self.Tab, self.Bac, self.Entr, \
             self.Del, self.Esc, self.F3, self.F4, self.Space, self.Comm,
 
-        # self.iconbitmap("@aspid.ico")
-        # img = tkinter.PhotoImage(file='Frame 1.png')
-        # Label(self,image=img,bg='#000000').pack()
+        self.iconbitmap("aspid.ico")
+        
+        # bg_img = Image.open("Frame1.png")
+        # bg_img = bg_img.resize((self.width, self.height), Image.LANCZOS)
+        # bg_img = ImageTk.PhotoImage(bg_img)
 
-        # переменные конфигурационного файла
+        # canvas = tkinter.Canvas(self, width=self.width, height=self.height)
+
+        # canvas.pack(side="top", fill="both", expand="no")
+        # canvas.create_image(0, 0, anchor="nw", image=bg_img)
+
         self.dir_file = 'data/'
         self.name_file = 'data.txt'
         self.d_name = dict()
@@ -69,7 +79,7 @@ class App(customtkinter.CTk):
         '''
 
         # загрузка данных из конфигурационного файла
-        self.load_file()
+        #self.load_file()
 
     # функция загрузки из конфигурационного файла
     def load_file(self):
@@ -414,7 +424,7 @@ class App(customtkinter.CTk):
                                               bg_color="#323335", state="disabled")
         self.button.place(relx=0.655, rely=0.811)
 
-    # информацияонный подвал
+    # информационный подвал
     def footer(self):
         border_1 = customtkinter.CTkLabel(self, text="©Aspis Keyboard 2022", text_color="#cce74f", justify=tkinter.LEFT)
         border_1.place(relx=0.01, rely=0.95)
