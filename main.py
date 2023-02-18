@@ -99,15 +99,15 @@ class App(customtkinter.CTk):
                                                master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70, font=('TButton', 10),
-                                               bg_color="#323335")
+                                               height=70, font=('OpenSans', 9),
+                                               bg_color="#323335",)
         self.button1.place(relx=0.570, rely=0.177)
 
         self.button2 = customtkinter.CTkButton(command=lambda: self.button_function("$key2", self.button2), text="Имя",
                                                master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70, font=('TButton', 10),
+                                               height=70, font=('OpenSans', 9),
                                                bg_color="#323335")
         self.button2.place(relx=0.706, rely=0.177)
 
@@ -115,7 +115,7 @@ class App(customtkinter.CTk):
                                                master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70, font=('TButton', 10),
+                                               height=70, font=('OpenSans', 9),
                                                bg_color="#323335")
         self.button3.place(relx=0.840, rely=0.177)
         # второй ряд
@@ -123,7 +123,7 @@ class App(customtkinter.CTk):
                                                master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70, font=('TButton', 10),
+                                               height=70, font=('OpenSans', 9),
                                                bg_color="#323335")
         self.button4.place(relx=0.032, rely=0.299)
 
@@ -131,7 +131,7 @@ class App(customtkinter.CTk):
                                                master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70, font=('TButton', 10),
+                                               height=70, font=('OpenSans', 9),
                                                bg_color="#323335")
         self.button5.place(relx=0.168, rely=0.299)
 
@@ -139,7 +139,7 @@ class App(customtkinter.CTk):
                                                master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70, font=('TButton', 10),
+                                               height=70, font=('OpenSans', 9),
                                                bg_color="#323335")
         self.button6.place(relx=0.301, rely=0.299)
 
@@ -147,7 +147,7 @@ class App(customtkinter.CTk):
                                                master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70, font=('TButton', 10),
+                                               height=70, font=('OpenSans', 9),
                                                bg_color="#323335")
         self.button7.place(relx=0.436, rely=0.299)
 
@@ -155,7 +155,7 @@ class App(customtkinter.CTk):
                                                master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70, font=('TButton', 10),
+                                               height=70, font=('OpenSans', 9),
                                                bg_color="#323335")
         self.button8.place(relx=0.570, rely=0.299)
 
@@ -163,7 +163,7 @@ class App(customtkinter.CTk):
                                                master=self,
                                                text_color="#008bd0",
                                                fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                               height=70, font=('TButton', 10),
+                                               height=70, font=('OpenSans', 9),
                                                bg_color="#323335")
         self.button9.place(relx=0.706, rely=0.299)
 
@@ -171,7 +171,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button10.place(relx=0.840, rely=0.299)
         # третий ряд
@@ -179,7 +179,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=144,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button11.place(relx=0.032, rely=0.420)
 
@@ -187,7 +187,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button12.place(relx=0.301, rely=0.420)
 
@@ -195,7 +195,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button13.place(relx=0.436, rely=0.420)
 
@@ -203,7 +203,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button14.place(relx=0.570, rely=0.420)
 
@@ -211,7 +211,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button15.place(relx=0.706, rely=0.420)
 
@@ -219,7 +219,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=144, font=('TButton', 10),
+                                                height=144, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button16.place(relx=0.840, rely=0.420)
 
@@ -227,7 +227,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button17.place(relx=0.032, rely=0.541)
 
@@ -235,7 +235,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button18.place(relx=0.168, rely=0.541)
 
@@ -243,7 +243,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button19.place(relx=0.301, rely=0.541)
 
@@ -251,7 +251,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=144,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button20.place(relx=0.436, rely=0.541)
 
@@ -259,7 +259,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=70,
-                                                height=70, font=('TButton', 10),
+                                                height=70, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button21.place(relx=0.706, rely=0.541)
 
@@ -269,7 +269,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#ECECEC', hover_color="#A3B8BD", corner_radius=8, width=55,
-                                                height=44, font=('TButton', 10),
+                                                height=44, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button24.place(relx=0.035, rely=0.190)
 
@@ -277,7 +277,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#ECECEC', hover_color="#A3B8BD", corner_radius=8, width=55,
-                                                height=44, font=('TButton', 10),
+                                                height=44, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button23.place(relx=0.2, rely=0.190)
 
@@ -285,7 +285,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=8, width=60,
-                                                height=60, font=('TButton', 10),
+                                                height=60, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button22.place(relx=0.11, rely=0.177)
         # Горизонтальный
@@ -294,7 +294,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=3, width=140,
-                                                height=25, font=('TButton', 10),
+                                                height=25, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button25.place(relx=0.306, rely=0.189)
 
@@ -302,7 +302,7 @@ class App(customtkinter.CTk):
                                                 text="Имя", master=self,
                                                 text_color="#008bd0",
                                                 fg_color='#FFFFFF', hover_color="#A3B8BD", corner_radius=3, width=140,
-                                                height=25, font=('TButton', 10),
+                                                height=25, font=('OpenSans', 9),
                                                 bg_color="#323335")
         self.button26.place(relx=0.306, rely=0.229)
 

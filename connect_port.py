@@ -30,6 +30,7 @@ def ser_write(data):
     print('Connect ' + ser.name)
 
     ser.write(data.encode())
+    ser.close()
 
 
 def ser_write_example(data):
